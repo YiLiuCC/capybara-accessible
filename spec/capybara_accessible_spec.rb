@@ -66,15 +66,12 @@ describe 'capybara-accessible', type: 'feature' do
     end
   end
 
-  describe 'poltergeist driver', driver: :accessible_poltergeist do
-    it_behaves_like 'a capybara accessible driver'
-  end
-
   describe 'selenium driver', driver: :accessible_selenium do
     it_behaves_like 'a capybara accessible driver'
   end
 
-  describe 'webkit driver', driver: :accessible_webkit do
+  describe 'selenium driver', driver: :accessible_selenium_chrome do
     it_behaves_like 'a capybara accessible driver'
   end
+
 end

@@ -44,6 +44,12 @@ Capybara.register_driver :accessible_selenium do |app|
   )
 end
 
+Capybara.register_driver :accessible_selenium_chrome do |app|
+  driver = Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
+  Capybara::Accessible.setup(driver, adaptor)
+end
+
 Capybara.register_driver :accessible_webkit do |app|
   require 'capybara/accessible/adapters/webkit'
   Capybara::Accessible.create_driver(
