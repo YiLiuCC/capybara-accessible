@@ -15,9 +15,9 @@ module Capybara
         Capybara::Accessible::Auditor.enable
       end
 
-      def create_driver(base_driver, driver_adaptor, app)
+      def create_driver(base_driver, driver_adaptor, app, **options)
         driver_class = Capybara::Accessible::Extensions::Driver.wrap(base_driver)
-        driver = driver_class.new(app)
+        driver = driver_class.new(app, **options)
         driver.accessible = driver_adaptor.new
         driver
       end
@@ -45,9 +45,13 @@ Capybara.register_driver :accessible_selenium do |app|
 end
 
 Capybara.register_driver :accessible_selenium_chrome do |app|
-  driver = Capybara::Selenium::Driver.new(app, :browser => :chrome)
-  adaptor = Capybara::Accessible::SeleniumDriverAdapter.new
-  Capybara::Accessible.setup(driver, adaptor)
+  require 'capybara/accessible/adapters/selenium'
+  Capybara::Accessible.create_driver(
+    Capybara::Selenium::Driver,
+    Capybara::Accessible::Adapters::Selenium,
+    app,
+    :browser => :chrome
+  )
 end
 
 Capybara.register_driver :accessible_webkit do |app|

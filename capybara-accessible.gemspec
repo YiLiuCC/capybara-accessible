@@ -19,8 +19,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'capybara', '>= 3.12.0'
 
+  spec.add_development_dependency 'poltergeist'
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'selenium-webdriver', '~> 2.0'
+  spec.add_development_dependency 'selenium-webdriver', '>= 3.14.0'
   spec.add_development_dependency 'sinatra'
 end
