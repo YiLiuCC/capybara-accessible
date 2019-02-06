@@ -11,6 +11,10 @@ rvm:
 before_install:
   - sudo apt-get update
   - sudo apt-get install chromium-chromedriver
+  - wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
+  - mkdir geckodriver
+  - tar -xzf geckodriver-v0.24.0-linux64.tar.gz -C geckodriver
+  - export PATH=$PATH:$PWD/geckodriver
 before_script:
   - "export PATH=$PATH:/usr/lib/chromium-browser/"
   - "export DISPLAY=:99.0"
@@ -19,3 +23,4 @@ before_script:
 
 addons:
   chrome: stable
+  firefox: latest
