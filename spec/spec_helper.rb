@@ -2,7 +2,7 @@ require 'capybara'
 require 'capybara/accessible'
 require 'capybara/poltergeist'
 require 'capybara/rspec'
-require 'capybara/webkit'
+# require 'capybara/webkit'
 
 require 'accessible_app'
 

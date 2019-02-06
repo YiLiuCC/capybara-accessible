@@ -54,14 +54,14 @@ Capybara.register_driver :accessible_selenium_chrome do |app|
   )
 end
 
-Capybara.register_driver :accessible_webkit do |app|
-  require 'capybara/accessible/adapters/webkit'
-  Capybara::Accessible.create_driver(
-    Capybara::Webkit::Driver,
-    Capybara::Accessible::Adapters::Webkit,
-    app,
-  )
-end
+# Capybara.register_driver :accessible_webkit do |app|
+#   require 'capybara/accessible/adapters/webkit'
+#   Capybara::Accessible.create_driver(
+#     Capybara::Webkit::Driver,
+#     Capybara::Accessible::Adapters::Webkit,
+#     app,
+#   )
+# end
 
 Capybara.register_driver :accessible_poltergeist do |app|
   require 'capybara/accessible/adapters/poltergeist'
