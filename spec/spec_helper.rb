@@ -13,3 +13,4 @@ RSpec.configure do |c|
 end
 
 Capybara.app = AccessibleApp
+Capybara.server = :webrick

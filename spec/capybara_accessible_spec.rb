@@ -74,7 +74,11 @@ describe 'capybara-accessible', type: 'feature' do
     it_behaves_like 'a capybara accessible driver'
   end
 
-  describe 'webkit driver', driver: :accessible_webkit do
+  describe 'selenium chrome driver', driver: :accessible_selenium_chrome do
     it_behaves_like 'a capybara accessible driver'
   end
+
+  # describe 'webkit driver', driver: :accessible_webkit do
+  #   it_behaves_like 'a capybara accessible driver'
+  # end
 end
