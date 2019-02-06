@@ -23,4 +23,4 @@ before_script:
 
 addons:
   chrome: stable
-  firefox: latest
+  firefox: latest-esr
